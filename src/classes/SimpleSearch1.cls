@@ -9,7 +9,6 @@ public class SimpleSearch1 {
       [SELECT ID, Name, LastName, MailingPostalCode FROM Contact WHERE LastName = :lastname AND MailingPostalCode = :mailPostCode] ;
       System.debug('Found Contacts: ' + contacts);
               return contacts;
-
   }
 
 }
