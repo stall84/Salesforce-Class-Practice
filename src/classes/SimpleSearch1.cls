@@ -2,14 +2,14 @@
  * Created by mstallings on 11/9/20.
  */
 
-public with sharing class SimpleSearch1 {
+public class SimpleSearch1 {
 
-    String searchQuery = 'FIND \'' + searchStr1 + '\' IN ALL FIELDS RETURNING  Account (Id,Name,type),Contact(name,email),Opportunity(name,StageName)';
+  public static List<Contact> searchForContacts(String lastname, String mailPostCode) {
+      List<Contact> contacts =
+      [SELECT ID, Name, LastName, MailingPostalCode FROM Contact WHERE LastName = :lastname AND MailingPostalCode = :mailPostCode] ;
+      System.debug('Found Contacts: ' + contacts);
+              return contacts;
 
-    List<List <sObject>> searchList = search.query(searchQuery);
-
-    accList = ((List<Account>)searchList[0]);
-    conList  = ((List<contact>)searchList[1]);
-    optyList = ((List<Opportunity>)searchList[2]);
+  }
 
 }
