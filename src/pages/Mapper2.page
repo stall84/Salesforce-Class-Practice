@@ -1,0 +1,13 @@
+<!--
+ - Created by mstallings on 11/10/20.
+ -->
+
+<apex:page id="Mapper2"
+           cache="true" action="{!MapLeadsToAccount}" contentType="application/vnd.ms-excel#Mapper2.csv"
+           showHeader="false" sidebar="false" standardStylesheets="false" controller="LeadConverter2"
+           extensions="LeadConverter2">
+
+    <apex:outputText value="{!jsonStringified}">
+    </apex:outputText>
+
+</apex:page>
